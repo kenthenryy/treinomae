@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino da Mãe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #D44D87; /* Rosa da imagem */
+            --bg: #EAEAEA;
+            --card-bg: #FFFFFF;
+            --text-dark: #333;
+            --text-light: #FFF;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .app-container {
+            width: 100%;
+            max-width: 450px; /* Tamanho de celular */
+            background-color: var(--bg);
+            position: relative;
+        }
+
+        /* HEADER */
+        .header {
+            background-color: var(--primary);
+            padding: 20px;
+            padding-bottom: 40px;
+            color: var(--text-light);
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 4px 10px rgba(212, 77, 135, 0.3);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-icon {
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        /* NAV DE DATA */
+        .date-nav {
+            background: rgba(255,255,255,0.15);
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .current-date {
+            text-align: center;
+        }
+
+        .current-date span {
+            display: block;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
+
+        .current-date strong {
+            font-size: 1.5rem;
+        }
+
+        /* CONTEÚDO DO TREINO */
+        .content {
+            padding: 20px;
+            margin-top: -30px; /* Sobrepor o header */
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: #F3D9E5;
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        h2 { margin: 10px 0; color: var(--text-dark); }
+
+        .exercise-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+        
+        .exercise-item:last-child { border-bottom: none; }
+
+        .exercise-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .exercise-details {
+            display: none; /* Escondido por padrão */
+            margin-top: 10px;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+
+        .exercise-details.open { display: block; }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .btn-video {
+            display: block;
+            text-align: center;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 0.8rem;
+        }
+
+        /* BOTÃO AÇÃO */
+        .btn-primary {
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(212, 77, 135, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .btn-primary:active { transform: scale(0.98); }
+
+        .empty-state { text-align: center; color: #888; padding: 30px; }
+
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <div class="header">
+        <div class="header-top">
+            <div>
+                <h1 style="margin:0; font-size: 1.8rem;">Olá, Mãe! ❤️</h1>
+                <p style="margin:5px 0 0 0; opacity: 0.9; font-size: 0.9rem;">Vamos nos mexer hoje?</p>
+            </div>
+            <div class="user-icon">👤</div>
+        </div>
+
+        <div class="date-nav">
+            <button class="nav-btn" onclick="mudarDia(-1)">←</button>
+            <div class="current-date" id="dateDisplay">
+                <span id="diaSemana">SEGUNDA</span>
+                <strong id="diaMes">1/12</strong>
+            </div>
+            <button class="nav-btn" onclick="mudarDia(1)">→</button>
+        </div>
+    </div>
+
+    <div class="content" id="workoutContainer">
+        <div class="card empty-state">Carregando treino...</div>
+    </div>
+</div>
+
+<script>
+    let currentDate = new Date();
+    let treinosData = null;
+
+    // 1. Carregar o JSON (Simulando fetch local)
+    async function carregarDados() {
+        try {
+            // Em produção no GitHub Pages, isso será: fetch('./treinos.json')
+            // Para teste agora, vamos simular o fetch:
+            const response = await fetch('treinos.json'); 
+            treinosData = await response.json();
+            renderizarDia();
+        } catch (error) {
+            console.error("Erro ao carregar:", error);
+            document.getElementById('workoutContainer').innerHTML = 
+                '<div class="card empty-state">Erro ao carregar treinos. Verifique o arquivo JSON.</div>';
+        }
+    }
+
+    // 2. Manipulação de Datas
+    function renderizarDia() {
+        const diasSemana = ['DOMINGO', 'SEGUNDA', 'TERÇA', 'QUARTA', 'QUINTA', 'SEXTA', 'SÁBADO'];
+        
+        // Atualizar Header
+        document.getElementById('diaSemana').innerText = diasSemana[currentDate.getDay()];
+        const dia = String(currentDate.getDate()).padStart(2, '0');
+        const mes = String(currentDate.getMonth() + 1).padStart(2, '0');
+        document.getElementById('diaMes').innerText = `${dia}/${mes}`;
+
+        // Buscar treino do dia
+        encontrarTreinoDoDia(currentDate.getDay());
+    }
+
+    function mudarDia(delta) {
+        currentDate.setDate(currentDate.getDate() + delta);
+        renderizarDia();
+    }
+
+    // 3. Lógica do Treino
+    function encontrarTreinoDoDia(diaSemanaIndex) {
+        if (!treinosData) return;
+
+        const container = document.getElementById('workoutContainer');
+        container.innerHTML = ''; // Limpar anterior
+
+        // Filtra se existe treino configurado para este dia da semana (0-6)
+        const treinoHoje = treinosData.rotina.find(t => t.dias_semana.includes(diaSemanaIndex));
+
+        if (treinoHoje) {
+            let htmlExercicios = '';
+            
+            treinoHoje.exercicios.forEach((ex, index) => {
+                const videoBtn = ex.video ? `<a href="${ex.video}" target="_blank" class="btn-video">🎥 Ver Vídeo</a>` : '';
+                
+                htmlExercicios += `
+                <div class="exercise-item">
+                    <div class="exercise-header" onclick="toggleDetails(${index})">
+                        <strong>${ex.nome}</strong>
+                        <span>${ex.series} x ${ex.repeticoes} ▼</span>
+                    </div>
+                    <div class="exercise-details" id="detalhe-${index}">
+                        <div class="detail-row"><span>Carga:</span> <strong>${ex.carga}</strong></div>
+                        <div class="detail-row"><span>Cadência:</span> <strong>${ex.cadencia}</strong></div>
+                        <div class="detail-row" style="display:block; margin-top:5px">
+                            <small>Obs: ${ex.obs}</small>
+                        </div>
+                        ${videoBtn}
+                    </div>
+                </div>`;
+            });
+
+            container.innerHTML = `
+                <div class="card">
+                    <span class="tag">${treinoHoje.nome}</span>
+                    <h2>Treino do Dia</h2>
+                    <p style="color:#666; font-size:0.9rem">${treinoHoje.descricao}</p>
+                    
+                    <div style="margin-top: 20px;">
+                        ${htmlExercicios}
+                    </div>
+
+                    <button class="btn-primary" onclick="finalizarTreino('${treinoHoje.nome}')">
+                        Concluir e Enviar Feedback
+                    </button>
+                </div>
+            `;
+        } else {
+            container.innerHTML = `
+                <div class="card empty-state">
+                    <h3>Descanso! 😴</h3>
+                    <p>Nenhum treino programado para hoje.</p>
+                </div>
+            `;
+        }
+    }
+
+    function toggleDetails(id) {
+        const el = document.getElementById(`detalhe-${id}`);
+        el.classList.toggle('open');
+    }
+
+    // 4. Feedback via WhatsApp
+    function finalizarTreino(nomeTreino) {
+        const telefone = "55seu_numero_aqui"; // Coloque seu número
+        const texto = `Oi filho! Terminei o *${nomeTreino}* de hoje (${document.getElementById('diaMes').innerText}). 
+        
+        Sentimento: ( ) Fácil ( ) Médio ( ) Difícil
+        Obs: `;
+        
+        const url = `https://wa.me/${telefone}?text=${encodeURIComponent(texto)}`;
+        window.open(url, '_blank');
+    }
+
+    // Iniciar
+    carregarDados();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "usuario": "Mãe",
+  "rotina": [
+    {
+      "id": "treino_a",
+      "nome": "Treino A",
+      "dias_semana": [1, 4], 
+      "descricao": "Foco em Pernas e Mobilidade",
+      "exercicios": [
+        {
+          "nome": "Agachamento Livre",
+          "series": 3,
+          "repeticoes": "10-12",
+          "carga": "5kg",
+          "cadencia": "2020",
+          "obs": "Manter postura ereta, olhar para frente.",
+          "video": "https://www.youtube.com/embed/SEU_VIDEO_ID"
+        },
+        {
+          "nome": "Mobilidade de Quadril",
+          "series": 2,
+          "repeticoes": "30seg",
+          "carga": "Peso do corpo",
+          "cadencia": "-",
+          "obs": "Sentir alongar bem.",
+          "video": "" 
+        }
+      ]
+    },
+    {
+      "id": "treino_b",
+      "nome": "Treino B",
+      "dias_semana": [3, 5],
+      "descricao": "Superior e Cardio",
+      "exercicios": []
+    }
+  ]
+}
