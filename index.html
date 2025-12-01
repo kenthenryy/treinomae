@@ -2,183 +2,293 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Treino da Mãe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #D44D87; /* Rosa da imagem */
-            --bg: #EAEAEA;
+            /* Paleta de cores refinada */
+            --primary: #E91E63; /* Rosa mais vibrante */
+            --primary-dark: #C2185B;
+            --primary-light: #F8BBD0;
+            --bg-app: #F0F2F5; /* Fundo cinza azulado claro */
             --card-bg: #FFFFFF;
-            --text-dark: #333;
-            --text-light: #FFF;
+            --text-dark: #2D3748;
+            --text-gray: #718096;
+            --text-light: #FFFFFF;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
         }
 
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg);
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--bg-app);
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
+            align-items: flex-start;
             min-height: 100vh;
+            color: var(--text-dark);
         }
 
+        /* Container principal que simula o celular no desktop */
         .app-container {
             width: 100%;
-            max-width: 450px; /* Tamanho de celular */
-            background-color: var(--bg);
+            max-width: 480px; /* Largura máxima confortável */
+            background-color: var(--bg-app);
             position: relative;
+            min-height: 100vh;
+            box-shadow: var(--shadow-lg);
+            overflow-x: hidden;
         }
 
-        /* HEADER */
+        /* HEADER REFINADO */
         .header {
-            background-color: var(--primary);
-            padding: 20px;
-            padding-bottom: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            padding: 25px 20px 45px 20px;
             color: var(--text-light);
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
-            box-shadow: 0 4px 10px rgba(212, 77, 135, 0.3);
+            border-bottom-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+            box-shadow: var(--shadow-md);
         }
 
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .header-content h1 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
-        .user-icon {
-            background: rgba(255,255,255,0.2);
-            padding: 10px;
-            border-radius: 50%;
+        .header-content p {
+            margin: 8px 0 0 0;
+            opacity: 0.9;
+            font-size: 1rem;
+            font-weight: 600;
         }
 
         /* NAV DE DATA */
         .date-nav {
-            background: rgba(255,255,255,0.15);
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 15px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            margin-top: 25px;
+            padding: 12px 15px;
+            border-radius: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             color: white;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .nav-btn {
             background: none;
             border: none;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
+            padding: 0 10px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
         }
+        .nav-btn:hover { opacity: 1; }
 
-        .current-date {
-            text-align: center;
-        }
-
+        .current-date { text-align: center; }
         .current-date span {
             display: block;
-            font-size: 0.8rem;
-            opacity: 0.8;
+            font-size: 0.85rem;
+            opacity: 0.9;
             text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
-
         .current-date strong {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
+            font-weight: 800;
         }
 
         /* CONTEÚDO DO TREINO */
         .content {
             padding: 20px;
-            margin-top: -30px; /* Sobrepor o header */
+            margin-top: -35px; /* Sobrepor o header */
+            padding-bottom: 40px;
         }
 
         .card {
             background: var(--card-bg);
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: var(--shadow-md);
             margin-bottom: 20px;
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
         .tag {
-            background: #F3D9E5;
-            color: var(--primary);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 800;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        h2 { margin: 10px 0; color: var(--text-dark); }
+        h2.treino-titulo { 
+            margin: 5px 0 10px 0; 
+            color: var(--text-dark); 
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        p.treino-desc {
+            color: var(--text-gray);
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        /* LISTA DE EXERCÍCIOS */
+        .exercise-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
         .exercise-item {
-            border-bottom: 1px solid #eee;
-            padding: 15px 0;
+            background: var(--bg-app);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
         }
         
-        .exercise-item:last-child { border-bottom: none; }
-
         .exercise-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
+            padding: 18px 20px;
+            background: white;
         }
+
+        .exercise-header strong {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .exercise-header .meta {
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .arrow-icon { transition: transform 0.3s ease; font-size: 0.8rem;}
+        .exercise-item.active .arrow-icon { transform: rotate(180deg); }
 
         .exercise-details {
-            display: none; /* Escondido por padrão */
-            margin-top: 10px;
-            background: #f9f9f9;
-            padding: 10px;
-            border-radius: 10px;
-            font-size: 0.9rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #FAFAFA;
+            padding: 0 20px;
         }
 
-        .exercise-details.open { display: block; }
+        .exercise-item.active .exercise-details {
+            padding: 15px 20px 20px 20px;
+            max-height: 500px; /* Valor seguro para a animação */
+            border-top: 1px solid #eee;
+        }
 
-        .detail-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-            color: #666;
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .detail-box span {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+        .detail-box strong {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .obs-box {
+            background: #fff3cd;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            color: #856404;
+            border-left: 4px solid #ffeeba;
         }
 
         .btn-video {
-            display: block;
-            text-align: center;
-            background: #333;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--text-dark);
             color: white;
             text-decoration: none;
-            padding: 5px;
-            border-radius: 5px;
-            margin-top: 10px;
-            font-size: 0.8rem;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            gap: 8px;
+            width: 100%;
         }
 
-        /* BOTÃO AÇÃO */
+        /* BOTÃO AÇÃO PRINCIPAL */
         .btn-primary {
             width: 100%;
-            background-color: var(--primary);
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
             color: white;
             border: none;
-            padding: 18px;
-            border-radius: 15px;
-            font-size: 1.1rem;
-            font-weight: bold;
+            padding: 20px;
+            border-radius: 18px;
+            font-size: 1.2rem;
+            font-weight: 800;
             cursor: pointer;
-            margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(212, 77, 135, 0.4);
-            transition: transform 0.2s;
+            margin-top: 30px;
+            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .btn-primary:active { transform: scale(0.98); }
+        .btn-primary:active { transform: scale(0.98); box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3); }
 
-        .empty-state { text-align: center; color: #888; padding: 30px; }
+        .empty-state { text-align: center; color: var(--text-gray); padding: 40px 20px; }
+        .empty-state h3 { color: var(--text-dark); font-size: 1.5rem; margin-bottom: 10px;}
+
+        /* Ajuste para Desktop */
+        @media (min-width: 768px) {
+            body {
+                background-color: #E2E8F0; /* Fundo diferente fora do "celular" */
+                padding: 20px;
+                align-items: center;
+            }
+            .app-container {
+                border-radius: 30px;
+                height: calc(100vh - 40px);
+                min-height: auto;
+            }
+        }
 
     </style>
 </head>
@@ -186,26 +296,25 @@
 
 <div class="app-container">
     <div class="header">
-        <div class="header-top">
-            <div>
-                <h1 style="margin:0; font-size: 1.8rem;">Olá, Mãe! ❤️</h1>
-                <p style="margin:5px 0 0 0; opacity: 0.9; font-size: 0.9rem;">Vamos nos mexer hoje?</p>
-            </div>
-            <div class="user-icon">👤</div>
+        <div class="header-content">
+            <h1>Olá, Mãe! ❤️</h1>
+            <p>Vamos nos mexer hoje?</p>
         </div>
 
         <div class="date-nav">
             <button class="nav-btn" onclick="mudarDia(-1)">←</button>
             <div class="current-date" id="dateDisplay">
-                <span id="diaSemana">SEGUNDA</span>
-                <strong id="diaMes">1/12</strong>
+                <span id="diaSemana">CARREGANDO</span>
+                <strong id="diaMes">--/--</strong>
             </div>
             <button class="nav-btn" onclick="mudarDia(1)">→</button>
         </div>
     </div>
 
     <div class="content" id="workoutContainer">
-        <div class="card empty-state">Carregando treino...</div>
+        <div class="card empty-state" style="padding: 50px;">
+            <p>Carregando seu treino...</p>
+        </div>
     </div>
 </div>
 
@@ -213,32 +322,26 @@
     let currentDate = new Date();
     let treinosData = null;
 
-    // 1. Carregar o JSON (Simulando fetch local)
     async function carregarDados() {
         try {
-            // Em produção no GitHub Pages, isso será: fetch('./treinos.json')
-            // Para teste agora, vamos simular o fetch:
-            const response = await fetch('treinos.json'); 
+            const response = await fetch('treinos.json?v=' + new Date().getTime()); // Cache busting
             treinosData = await response.json();
             renderizarDia();
         } catch (error) {
             console.error("Erro ao carregar:", error);
             document.getElementById('workoutContainer').innerHTML = 
-                '<div class="card empty-state">Erro ao carregar treinos. Verifique o arquivo JSON.</div>';
+                '<div class="card empty-state"><h3>Ops!</h3><p>Não consegui carregar os treinos. Verifique o arquivo JSON.</p></div>';
         }
     }
 
-    // 2. Manipulação de Datas
     function renderizarDia() {
         const diasSemana = ['DOMINGO', 'SEGUNDA', 'TERÇA', 'QUARTA', 'QUINTA', 'SEXTA', 'SÁBADO'];
         
-        // Atualizar Header
         document.getElementById('diaSemana').innerText = diasSemana[currentDate.getDay()];
         const dia = String(currentDate.getDate()).padStart(2, '0');
         const mes = String(currentDate.getMonth() + 1).padStart(2, '0');
         document.getElementById('diaMes').innerText = `${dia}/${mes}`;
 
-        // Buscar treino do dia
         encontrarTreinoDoDia(currentDate.getDay());
     }
 
@@ -247,78 +350,92 @@
         renderizarDia();
     }
 
-    // 3. Lógica do Treino
     function encontrarTreinoDoDia(diaSemanaIndex) {
         if (!treinosData) return;
 
         const container = document.getElementById('workoutContainer');
-        container.innerHTML = ''; // Limpar anterior
+        container.innerHTML = ''; 
 
-        // Filtra se existe treino configurado para este dia da semana (0-6)
+        // Procura o treino que tenha o índice do dia da semana atual na lista 'dias_semana'
         const treinoHoje = treinosData.rotina.find(t => t.dias_semana.includes(diaSemanaIndex));
 
         if (treinoHoje) {
-            let htmlExercicios = '';
+            let htmlExercicios = '<div class="exercise-list">';
             
             treinoHoje.exercicios.forEach((ex, index) => {
-                const videoBtn = ex.video ? `<a href="${ex.video}" target="_blank" class="btn-video">🎥 Ver Vídeo</a>` : '';
+                const videoBtn = ex.video ? `<a href="${ex.video}" target="_blank" class="btn-video">▶ Ver Vídeo da Execução</a>` : '';
+                const obsBlock = ex.obs ? `<div class="obs-box">💡 <strong>Obs:</strong> ${ex.obs}</div>` : '';
                 
                 htmlExercicios += `
-                <div class="exercise-item">
+                <div class="exercise-item" id="ex-item-${index}">
                     <div class="exercise-header" onclick="toggleDetails(${index})">
                         <strong>${ex.nome}</strong>
-                        <span>${ex.series} x ${ex.repeticoes} ▼</span>
-                    </div>
-                    <div class="exercise-details" id="detalhe-${index}">
-                        <div class="detail-row"><span>Carga:</span> <strong>${ex.carga}</strong></div>
-                        <div class="detail-row"><span>Cadência:</span> <strong>${ex.cadencia}</strong></div>
-                        <div class="detail-row" style="display:block; margin-top:5px">
-                            <small>Obs: ${ex.obs}</small>
+                        <div class="meta">
+                            <span>${ex.series}x ${ex.repeticoes}</span>
+                            <span class="arrow-icon">▼</span>
                         </div>
+                    </div>
+                    <div class="exercise-details">
+                        <div class="detail-grid">
+                            <div class="detail-box"><span>Carga</span><strong>${ex.carga}</strong></div>
+                            <div class="detail-box"><span>Cadência</span><strong>${ex.cadencia}</strong></div>
+                        </div>
+                        ${obsBlock}
                         ${videoBtn}
                     </div>
                 </div>`;
             });
+            htmlExercicios += '</div>';
 
             container.innerHTML = `
                 <div class="card">
                     <span class="tag">${treinoHoje.nome}</span>
-                    <h2>Treino do Dia</h2>
-                    <p style="color:#666; font-size:0.9rem">${treinoHoje.descricao}</p>
+                    <h2 class="treino-titulo">Treino do Dia</h2>
+                    <p class="treino-desc">${treinoHoje.descricao}</p>
                     
-                    <div style="margin-top: 20px;">
-                        ${htmlExercicios}
-                    </div>
+                    ${htmlExercicios}
 
                     <button class="btn-primary" onclick="finalizarTreino('${treinoHoje.nome}')">
-                        Concluir e Enviar Feedback
+                        Concluir Treino e Enviar Feedback 🎉
                     </button>
                 </div>
             `;
         } else {
             container.innerHTML = `
                 <div class="card empty-state">
-                    <h3>Descanso! 😴</h3>
-                    <p>Nenhum treino programado para hoje.</p>
+                    <div style="font-size: 4rem;">😴</div>
+                    <h3>Dia de Descanso!</h3>
+                    <p>Aproveite para recuperar as energias. Nenhum treino programado para hoje.</p>
                 </div>
             `;
         }
     }
 
     function toggleDetails(id) {
-        const el = document.getElementById(`detalhe-${id}`);
-        el.classList.toggle('open');
+        // Fecha todos os outros primeiro para ficar mais limpo (opcional)
+        document.querySelectorAll('.exercise-item.active').forEach(item => {
+            if (item.id !== `ex-item-${id}`) item.classList.remove('active');
+        });
+        
+        const el = document.getElementById(`ex-item-${id}`);
+        el.classList.toggle('active');
     }
 
-    // 4. Feedback via WhatsApp
+    // --- FUNÇÃO DE FEEDBACK COM SEU NÚMERO ---
     function finalizarTreino(nomeTreino) {
-        const telefone = "55seu_numero_aqui"; // Coloque seu número
-        const texto = `Oi filho! Terminei o *${nomeTreino}* de hoje (${document.getElementById('diaMes').innerText}). 
+        // SEU NÚMERO JÁ CONFIGURADO AQUI:
+        const telefone = "5561992265542"; 
         
-        Sentimento: ( ) Fácil ( ) Médio ( ) Difícil
-        Obs: `;
+        const dataFormatada = document.getElementById('diaMes').innerText;
         
-        const url = `https://wa.me/${telefone}?text=${encodeURIComponent(texto)}`;
+        // Mensagem mais formatadinha pro WhatsApp
+        const texto = `*Feedback de Treino - Mãe* 💪\n\n✅ Concluí o *${nomeTreino}* de hoje (${dataFormatada}).\n\n--- \nSentimento: \n( ) Fácil \n( ) Médio \n( ) Difícil \n\nObs:`;
+        
+        // Detecta se é celular ou desktop para usar a API certa do Whats
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        const baseUrl = isMobile ? 'https://api.whatsapp.com/send' : 'https://web.whatsapp.com/send';
+        const url = `${baseUrl}?phone=${telefone}&text=${encodeURIComponent(texto)}`;
+        
         window.open(url, '_blank');
     }
 
