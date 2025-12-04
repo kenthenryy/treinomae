@@ -3,36 +3,128 @@
   "rotina": [
     {
       "id": "treino_a",
-      "nome": "Treino A",
+      "nome": "Treino A - Inferior",
       "dias_semana": [1, 4], 
-      "descricao": "Foco em Pernas e Mobilidade",
-      "exercicios": [
+      "descricao": "Foco em Pernas e Glúteos",
+      "mobilidade": [
         {
-          "nome": "Agachamento Livre",
-          "series": 3,
+          "nome": "Rotina de Mobilidade Geral",
+          "series": 1,
+          "repeticoes": "5 min",
+          "obs": "Movimentos circulares de quadril e tornozelos.",
+          "video": "",
+          "imagem": "https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif"
+        }
+      ],
+      "principal": [
+        {
+          "nome": "Agachamento",
+          "series": 5,
           "repeticoes": "10-12",
-          "carga": "5kg",
-          "cadencia": "2020",
-          "obs": "Manter postura ereta, olhar para frente.",
-          "video": "https://www.youtube.com/embed/SEU_VIDEO_ID"
+          "carga": "Ajustar",
+          "cadencia": "Controlada",
+          "obs": "Pés na largura dos ombros, coluna reta.",
+          "video": "https://www.youtube.com/watch?v=SEU_LINK"
         },
         {
-          "nome": "Mobilidade de Quadril",
-          "series": 2,
-          "repeticoes": "30seg",
-          "carga": "Peso do corpo",
-          "cadencia": "-",
-          "obs": "Sentir alongar bem.",
-          "video": "" 
+          "nome": "Glúteo com Band (Elástico)",
+          "series": 3,
+          "repeticoes": "10-12",
+          "carga": "Elástico Médio",
+          "cadencia": "Normal",
+          "obs": "Contraia bem o glúteo no final do movimento.",
+          "video": ""
+        },
+        {
+          "nome": "Stiff ou Flexão de Perna",
+          "series": 3,
+          "repeticoes": "10-12",
+          "carga": "Ajustar",
+          "cadencia": "Lenta na descida",
+          "obs": "Sinta alongar a parte de trás da coxa.",
+          "video": ""
+        }
+      ],
+      "alongamento": [
+        {
+          "nome": "Alongamento Final",
+          "series": 1,
+          "repeticoes": "Relaxamento",
+          "obs": "Respire fundo e solte o corpo.",
+          "imagem": ""
         }
       ]
     },
     {
       "id": "treino_b",
-      "nome": "Treino B",
-      "dias_semana": [3, 5],
-      "descricao": "Superior e Cardio",
-      "exercicios": []
+      "nome": "Treino B - Superior",
+      "dias_semana": [2, 5],
+      "descricao": "Braços e Costas",
+      "mobilidade": [
+        {
+          "nome": "Mobilidade de Ombros",
+          "series": 1,
+          "repeticoes": "3 min",
+          "obs": "Girar os braços para frente e para trás.",
+          "imagem": ""
+        }
+      ],
+      "principal": [
+        {
+          "nome": "Flexão de Braço (Na Parede)",
+          "series": 5,
+          "repeticoes": "10-12",
+          "carga": "Peso do corpo",
+          "cadencia": "Normal",
+          "obs": "Mantenha o corpo alinhado, não deixe o quadril cair.",
+          "video": ""
+        },
+        {
+          "nome": "Remada",
+          "series": 5,
+          "repeticoes": "10-12",
+          "carga": "Ajustar",
+          "cadencia": "Puxa rápido, volta devagar",
+          "obs": "Feche as escápulas ao puxar.",
+          "video": ""
+        },
+        {
+          "nome": "Desenvolvimento de Ombros",
+          "series": 3,
+          "repeticoes": "10-12",
+          "carga": "Leve",
+          "cadencia": "Normal",
+          "obs": "Elevar os pesos acima da cabeça.",
+          "video": ""
+        },
+        {
+          "nome": "Bíceps",
+          "series": 2,
+          "repeticoes": "15-20",
+          "carga": "Leve",
+          "cadencia": "Normal",
+          "obs": "",
+          "video": ""
+        },
+        {
+          "nome": "Tríceps",
+          "series": 2,
+          "repeticoes": "15-20",
+          "carga": "Leve",
+          "cadencia": "Normal",
+          "obs": "",
+          "video": ""
+        }
+      ],
+      "alongamento": [
+        {
+          "nome": "Alongamento de Braços e Pescoço",
+          "series": 1,
+          "repeticoes": "2 min",
+          "obs": "Puxe levemente o pescoço para o lado.",
+          "imagem": ""
+        }
+      ]
     }
   ]
 }
