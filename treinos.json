@@ -18,30 +18,48 @@
       ],
       "principal": [
         {
-          "nome": "Agachamento",
-          "series": 5,
+          "nome": "Agachamento (Sentar e Levantar)",
+          "series": "2-4",
           "repeticoes": "10-12",
-          "carga": "Ajustar",
+          "carga": "Peso do corpo",
           "cadencia": "Controlada",
-          "obs": "Pés na largura dos ombros, coluna reta.",
+          "obs": "Pés na largura dos ombros, coluna reta e controlar a descida.",
           "video": "https://www.youtube.com/watch?v=SEU_LINK"
         },
         {
           "nome": "Glúteo com Band (Elástico)",
-          "series": 3,
+          "series": "2-3",
           "repeticoes": "10-12",
-          "carga": "Elástico Médio",
+          "carga": "Elástico Fácil",
           "cadencia": "Normal",
-          "obs": "Contraia bem o glúteo no final do movimento.",
+          "obs": "Contraia bem o glúteo no final do movimento (conte até 2 segundos contraindo opcional).",
           "video": ""
         },
         {
-          "nome": "Stiff ou Flexão de Perna",
-          "series": 3,
+          "nome": "Flexão de Joelhos em pé com Caneleira",
+          "series": "2-3",
           "repeticoes": "10-12",
-          "carga": "Ajustar",
-          "cadencia": "Lenta na descida",
+          "carga": "Caneleira",
+          "cadencia": "Contrair bem no top e controlar o movimento na descida",
           "obs": "Sinta alongar a parte de trás da coxa.",
+          "video": ""
+        },
+        {
+          "nome": "Prancha Isométrica",
+          "series": "2-3",
+          "repeticoes": "Até 1 min",
+          "carga": "Peso do corpo",
+          "cadencia": "Isometria",
+          "obs": "Postura correta, lembre de esticar bem os pés e contrair os Glúteos",
+          "video": ""
+        },
+        {
+          "nome": "Panturrilha Livre em Pé",
+          "series": "2-3",
+          "repeticoes": "12-15",
+          "carga": "Peso do corpo",
+          "cadencia": "Lenta na descida",
+          "obs": "Conte até 2 segundos no final do movimento opcional",
           "video": ""
         }
       ],
@@ -72,7 +90,7 @@
       "principal": [
         {
           "nome": "Flexão de Braço (Na Parede)",
-          "series": 5,
+          "series": "2-3",
           "repeticoes": "10-12",
           "carga": "Peso do corpo",
           "cadencia": "Normal",
@@ -80,38 +98,38 @@
           "video": ""
         },
         {
-          "nome": "Remada",
-          "series": 5,
+          "nome": "Remada Sentada com Elástico",
+          "series": "2-3",
           "repeticoes": "10-12",
-          "carga": "Ajustar",
+          "carga": "Elástico Amarelo",
           "cadencia": "Puxa rápido, volta devagar",
           "obs": "Feche as escápulas ao puxar.",
           "video": ""
         },
         {
-          "nome": "Desenvolvimento de Ombros",
-          "series": 3,
-          "repeticoes": "10-12",
-          "carga": "Leve",
+          "nome": "Elevação Lateral com Anilha",
+          "series": "2-3",
+          "repeticoes": "12-15",
+          "carga": "Anilhas",
           "cadencia": "Normal",
-          "obs": "Elevar os pesos acima da cabeça.",
+          "obs": "Controlar a descida",
           "video": ""
         },
         {
-          "nome": "Bíceps",
-          "series": 2,
+          "nome": "Bíceps Unilateral",
+          "series": "2-3",
           "repeticoes": "15-20",
-          "carga": "Leve",
-          "cadencia": "Normal",
-          "obs": "",
+          "carga": "Halter",
+          "cadencia": "Controlar a descida",
+          "obs": "Tente contrair bem o biceps como se quisesse esmagar algo entre seu Braço e Antebraço",
           "video": ""
         },
         {
-          "nome": "Tríceps",
-          "series": 2,
+          "nome": "Tríceps Francês Unilateral",
+          "series": "2-3",
           "repeticoes": "15-20",
-          "carga": "Leve",
-          "cadencia": "Normal",
+          "carga": "Anilhas",
+          "cadencia": "Controlar a descida",
           "obs": "",
           "video": ""
         }
