@@ -222,7 +222,16 @@
         renderizarDia();
     }
 
-    // Função auxiliar para gerar HTML de uma lista de exercícios
+
+
+    // --- NOVA FUNÇÃO PARA EXTRAIR ID DO YOUTUBE ---
+    function getYoutubeId(url) {
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+        const match = url.match(regExp);
+        return (match && match[2].length === 11) ? match[2] : null;
+    }
+
+    // --- FUNÇÃO ATUALIZADA COM VÍDEO EMBUTIDO ---
     function gerarListaExercicios(lista, tipoID) {
         if (!lista || lista.length === 0) return '';
         
@@ -230,13 +239,37 @@
         lista.forEach((ex, idx) => {
             const uniqueID = `${tipoID}-${idx}`;
             
-            // Verifica se tem imagem ou vídeo
             let mediaHtml = '';
-            if(ex.imagem) mediaHtml += `<img src="${ex.imagem}" class="exercise-img" loading="lazy">`;
-            if(ex.video) mediaHtml += `<a href="${ex.video}" target="_blank" class="btn-video">▶ Ver Vídeo</a>`;
+            
+            // 1. Imagem (se houver)
+            if(ex.imagem) {
+                mediaHtml += `<img src="${ex.imagem}" class="exercise-img" loading="lazy" alt="Imagem do exercício">`;
+            }
+
+            // 2. Vídeo (Inteligência para YouTube)
+            if(ex.video) {
+                const youtubeId = getYoutubeId(ex.video);
+                
+                if (youtubeId) {
+                    // Se for YouTube, cria o player embutido
+                    mediaHtml += `
+                        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius:10px; margin-top:10px;">
+                            <iframe 
+                                src="https://www.youtube.com/embed/${youtubeId}" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>`;
+                } else {
+                    // Se for outro link, mantém o botão antigo
+                    mediaHtml += `<a href="${ex.video}" target="_blank" class="btn-video">▶ Ver Vídeo</a>`;
+                }
+            }
+            
             if(mediaHtml) mediaHtml = `<div class="media-container">${mediaHtml}</div>`;
 
-            const obsHtml = ex.obs ? `<div style="margin-top:10px; padding:10px; background:#fff3cd; color:#856404; border-radius:8px; font-size:0.9rem;">💡 ${ex.obs}</div>` : '';
+            const obsHtml = ex.obs ? `<div style="margin-top:10px; padding:10px; background:#fff3cd; color:#856404; border-left: 4px solid #ffeeba; border-radius:4px; font-size:0.9rem;">💡 ${ex.obs}</div>` : '';
 
             html += `
             <div class="exercise-item" id="item-${uniqueID}">
@@ -257,7 +290,7 @@
         html += `</div>`;
         return html;
     }
-
+    
     function renderizarTreino(diaIndex) {
         const container = document.getElementById('workoutContainer');
         container.innerHTML = '';
