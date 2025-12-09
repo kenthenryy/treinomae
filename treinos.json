@@ -8,12 +8,36 @@
       "descricao": "Foco em Pernas e Glúteos",
       "mobilidade": [
         {
-          "nome": "Rotina de Mobilidade Geral",
+          "nome": "Mobilidade Torácica",
           "series": 1,
           "repeticoes": "5 min",
-          "obs": "Movimentos circulares de quadril e tornozelos.",
+          "obs": "Respire fundo e faça bem concentrado!",
           "video": "",
-          "imagem": "https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif"
+          "imagem": "https://www.youtube.com/shorts/ke4-xcyiKEc"
+        },
+        {
+          "nome": "Mobilidade Torácica 4 Apoios",
+          "series": 1,
+          "repeticoes": "5 min",
+          "obs": "Respire fundo e faça bem concentrado!",
+          "video": "",
+          "imagem": "https://www.youtube.com/shorts/0feJGO4xwuI"
+        },
+        {
+          "nome": "Mobilidade Escapular Isométrica",
+          "series": 1,
+          "repeticoes": "5 min",
+          "obs": "Respire fundo e faça bem concentrado!",
+          "video": "",
+          "imagem": "https://www.youtube.com/shorts/VUy6kGqRSSE"
+        },
+       {
+          "nome": "Mobilidade Gato-Vaca",
+          "series": 1,
+          "repeticoes": "5 min",
+          "obs": "Respire fundo e faça bem concentrado!",
+          "video": "",
+          "imagem": "https://www.youtube.com/shorts/QEYxvV88q1I"
         }
       ],
       "principal": [
@@ -24,7 +48,7 @@
           "carga": "Peso do corpo",
           "cadencia": "Controlada",
           "obs": "Pés na largura dos ombros, coluna reta e controlar a descida.",
-          "video": "https://www.youtube.com/watch?v=SEU_LINK"
+          "video": "https://www.youtube.com/shorts/jFMUr0HSRR4"
         },
         {
           "nome": "Glúteo com Band (Elástico)",
@@ -33,7 +57,7 @@
           "carga": "Elástico Fácil",
           "cadencia": "Normal",
           "obs": "Contraia bem o glúteo no final do movimento (conte até 2 segundos contraindo opcional).",
-          "video": ""
+          "video": "https://www.youtube.com/shorts/f3yGpSNJppA"
         },
         {
           "nome": "Flexão de Joelhos em pé com Caneleira",
@@ -51,7 +75,7 @@
           "carga": "Peso do corpo",
           "cadencia": "Isometria",
           "obs": "Postura correta, lembre de esticar bem os pés e contrair os Glúteos",
-          "video": ""
+          "video": "https://www.youtube.com/shorts/gFy6bDX0TBU"
         },
         {
           "nome": "Panturrilha Livre em Pé",
@@ -60,7 +84,7 @@
           "carga": "Peso do corpo",
           "cadencia": "Lenta na descida",
           "obs": "Conte até 2 segundos no final do movimento opcional",
-          "video": ""
+          "video": "https://www.youtube.com/shorts/0S_yr2FNmbg"
         }
       ],
       "alongamento": [
@@ -80,11 +104,36 @@
       "descricao": "Braços e Costas",
       "mobilidade": [
         {
-          "nome": "Mobilidade de Ombros",
+          "nome": "Mobilidade Torácica",
           "series": 1,
-          "repeticoes": "3 min",
-          "obs": "Girar os braços para frente e para trás.",
-          "imagem": ""
+          "repeticoes": "5 min",
+          "obs": "Respire fundo e faça bem concentrado!",
+          "video": "",
+          "imagem": "https://www.youtube.com/shorts/ke4-xcyiKEc"
+        },
+        {
+          "nome": "Mobilidade Torácica 4 Apoios",
+          "series": 1,
+          "repeticoes": "5 min",
+          "obs": "Respire fundo e faça bem concentrado!",
+          "video": "",
+          "imagem": "https://www.youtube.com/shorts/0feJGO4xwuI"
+        },
+        {
+          "nome": "Mobilidade Escapular Isométrica",
+          "series": 1,
+          "repeticoes": "5 min",
+          "obs": "Respire fundo e faça bem concentrado!",
+          "video": "",
+          "imagem": "https://www.youtube.com/shorts/VUy6kGqRSSE"
+        },
+       {
+          "nome": "Mobilidade Gato-Vaca",
+          "series": 1,
+          "repeticoes": "5 min",
+          "obs": "Respire fundo e faça bem concentrado!",
+          "video": "",
+          "imagem": "https://www.youtube.com/shorts/QEYxvV88q1I"
         }
       ],
       "principal": [
@@ -95,7 +144,7 @@
           "carga": "Peso do corpo",
           "cadencia": "Normal",
           "obs": "Mantenha o corpo alinhado, não deixe o quadril cair.",
-          "video": ""
+          "video": "https://www.youtube.com/shorts/T4hpXYivLms"
         },
         {
           "nome": "Remada Sentada com Elástico",
@@ -104,7 +153,7 @@
           "carga": "Elástico Amarelo",
           "cadencia": "Puxa rápido, volta devagar",
           "obs": "Feche as escápulas ao puxar.",
-          "video": ""
+          "video": "https://www.youtube.com/shorts/SOjfNYZqkq4"
         },
         {
           "nome": "Elevação Lateral com Anilha",
@@ -113,7 +162,7 @@
           "carga": "Anilhas",
           "cadencia": "Normal",
           "obs": "Controlar a descida",
-          "video": ""
+          "video": "https://www.youtube.com/shorts/vAoNuHpgpIg"
         },
         {
           "nome": "Bíceps Unilateral",
@@ -122,7 +171,7 @@
           "carga": "Halter",
           "cadencia": "Controlar a descida",
           "obs": "Tente contrair bem o biceps como se quisesse esmagar algo entre seu Braço e Antebraço",
-          "video": ""
+          "video": "https://www.youtube.com/shorts/gfMWiUkdr6U"
         },
         {
           "nome": "Tríceps Francês Unilateral",
@@ -131,7 +180,7 @@
           "carga": "Anilhas",
           "cadencia": "Controlar a descida",
           "obs": "",
-          "video": ""
+          "video": "https://www.youtube.com/shorts/5NzdYc1G0b8"
         }
       ],
       "alongamento": [
