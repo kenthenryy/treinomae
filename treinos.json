@@ -12,32 +12,32 @@
           "series": 1,
           "repeticoes": "5 min",
           "obs": "Respire fundo e faça bem concentrado!",
-          "video": "",
-          "imagem": "https://www.youtube.com/shorts/ke4-xcyiKEc"
+          "video": "https://www.youtube.com/shorts/ke4-xcyiKEc",
+          // "imagem": "https://www.youtube.com/shorts/ke4-xcyiKEc"
         },
         {
           "nome": "Mobilidade Torácica 4 Apoios",
           "series": 1,
           "repeticoes": "5 min",
           "obs": "Respire fundo e faça bem concentrado!",
-          "video": "",
-          "imagem": "https://www.youtube.com/shorts/0feJGO4xwuI"
+          "video": "https://www.youtube.com/shorts/0feJGO4xwuI",
+          // "imagem": "https://www.youtube.com/shorts/0feJGO4xwuI"
         },
         {
           "nome": "Mobilidade Escapular Isométrica",
           "series": 1,
           "repeticoes": "5 min",
           "obs": "Respire fundo e faça bem concentrado!",
-          "video": "",
-          "imagem": "https://www.youtube.com/shorts/VUy6kGqRSSE"
+          "video": "https://www.youtube.com/shorts/VUy6kGqRSSE",
+          // "imagem": "https://www.youtube.com/shorts/VUy6kGqRSSE"
         },
        {
           "nome": "Mobilidade Gato-Vaca",
           "series": 1,
           "repeticoes": "5 min",
           "obs": "Respire fundo e faça bem concentrado!",
-          "video": "",
-          "imagem": "https://www.youtube.com/shorts/QEYxvV88q1I"
+          "video": "https://www.youtube.com/shorts/QEYxvV88q1I",
+          // "imagem": "https://www.youtube.com/shorts/QEYxvV88q1I"
         }
       ],
       "principal": [
@@ -108,32 +108,32 @@
           "series": 1,
           "repeticoes": "5 min",
           "obs": "Respire fundo e faça bem concentrado!",
-          "video": "",
-          "imagem": "https://www.youtube.com/shorts/ke4-xcyiKEc"
+          "video": "https://www.youtube.com/shorts/ke4-xcyiKEc",
+          // "imagem": "https://www.youtube.com/shorts/ke4-xcyiKEc"
         },
         {
           "nome": "Mobilidade Torácica 4 Apoios",
           "series": 1,
           "repeticoes": "5 min",
           "obs": "Respire fundo e faça bem concentrado!",
-          "video": "",
-          "imagem": "https://www.youtube.com/shorts/0feJGO4xwuI"
+          "video": "https://www.youtube.com/shorts/0feJGO4xwuI",
+          // "imagem": "https://www.youtube.com/shorts/0feJGO4xwuI"
         },
         {
           "nome": "Mobilidade Escapular Isométrica",
           "series": 1,
           "repeticoes": "5 min",
           "obs": "Respire fundo e faça bem concentrado!",
-          "video": "",
-          "imagem": "https://www.youtube.com/shorts/VUy6kGqRSSE"
+          "video": "https://www.youtube.com/shorts/VUy6kGqRSSE",
+          // "imagem": "https://www.youtube.com/shorts/VUy6kGqRSSE"
         },
        {
           "nome": "Mobilidade Gato-Vaca",
           "series": 1,
           "repeticoes": "5 min",
           "obs": "Respire fundo e faça bem concentrado!",
-          "video": "",
-          "imagem": "https://www.youtube.com/shorts/QEYxvV88q1I"
+          "video": "https://www.youtube.com/shorts/QEYxvV88q1I",
+          // "imagem": "https://www.youtube.com/shorts/QEYxvV88q1I"
         }
       ],
       "principal": [
@@ -185,9 +185,9 @@
       ],
       "alongamento": [
         {
-          "nome": "Alongamento de Braços e Pescoço",
+          "nome": "Alongamento com Elástico, Pernas para o lado e Abraçar as pernas",
           "series": 1,
-          "repeticoes": "2 min",
+          "repeticoes": "1-2 min, pelo menos 10 respirações profundas",
           "obs": "Puxe levemente o pescoço para o lado.",
           "imagem": ""
         }
